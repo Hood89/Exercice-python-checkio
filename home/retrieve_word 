@@ -1,0 +1,31 @@
+import string
+
+def word_on_string(words):
+    if not words.strip():
+        return [], "", "", 0, ""
+
+    diviser = words.split()
+    nb1, nb2 = diviser[0], diviser[-1]
+
+    plus_long_mot = 0
+    mot_plus_long = ""
+
+    for mot in diviser:
+        mot_nettoye = mot.strip(string.punctuation)
+        if len(mot_nettoye) > plus_long_mot:
+            plus_long_mot = len(mot_nettoye)
+            mot_plus_long = mot_nettoye
+
+    return diviser, nb1, nb2, plus_long_mot, mot_plus_long
+
+
+phrase = input("Entrée une phrase pour voir: ")
+diviser, nb1, nb2, plus_long_mot, mot_plus_long = word_on_string(phrase)
+
+if not diviser:
+    print("Vous n'avez pas entré de phrase valide.")
+else:
+    print(f"Le nombre total de mot est: {len(diviser)}")
+    print(f"Le mot le plus long est : '{mot_plus_long.upper()}' et contient {plus_long_mot} caractères.")
+    print(f"Le premier mot est : {nb1}")
+    print(f"Le dernier mot est : {nb2}")
