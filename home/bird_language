@@ -1,0 +1,30 @@
+def translation(text: str) -> str:
+    words = text.split()
+    translated_words = []
+    vowels = "aeiouy"
+    
+    for word in words:
+        i = 0
+        clean_word = ""
+        while i < len(word):
+            letter = word[i]
+            if letter in vowels:
+                clean_word += letter
+                i += 3
+            else:
+                clean_word += letter
+                i += 2
+        translated_words.append(clean_word)
+    
+    return " ".join(translated_words)
+
+print("Example:")
+print(translation("hieeelalaooo"))
+
+# These "asserts" are used for self-checking
+assert translation("hieeelalaooo") == "hello"
+assert translation("hoooowe yyyooouuu duoooiiine") == "how you doin"
+assert translation("aaa bo cy da eee fe") == "a b c d e f"
+assert translation("sooooso aaaaaaaaa") == "sos aaa"
+
+print("The mission is done! Click 'Check Solution' to earn rewards!")
