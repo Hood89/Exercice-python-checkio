@@ -1,0 +1,16 @@
+# Welcome to the Python coding playground. 
+# Example output:
+# 5! is equal to 120
+
+# Type your code here:
+  
+def facto(n):
+    f = 1
+    if n < 0:
+        return "Enter a valid number"
+    for a in range(1, n + 1):
+        f *= a
+    return f
+
+verifier = facto(5)
+print(verifier)
