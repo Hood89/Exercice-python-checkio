@@ -1,0 +1,15 @@
+# Welcome to the Python coding playground. 
+# Fibonacci sequence:
+# 1, 1, 2, 3, 5, 8
+
+# Type your code here:
+  
+numbers = [0, 1]
+
+for i in range(2, 15):
+  new_num1 = numbers[-1]
+  new_num2 = numbers[-2]
+
+  total = new_num1 + new_num2 
+  numbers.append(total)
+print(numbers)
