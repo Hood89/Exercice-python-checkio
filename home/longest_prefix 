@@ -1,8 +1,7 @@
 def longest_prefix(words: list[str]) -> str:
     # your code here
-    max_pref = ""
     if not words:
-        return max_pref
+        return ""
     
     prefix = words[0]
     for word in words[1:]:
