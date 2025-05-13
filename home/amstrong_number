@@ -1,0 +1,28 @@
+def is_armstrong(num: int) -> bool:
+    # your code here
+   
+    num_lst = list(str(num))
+    len_num = len(num_lst)  
+    count  = 0
+    for nu in num_lst:
+        verifier = int(nu) ** len_num
+        count = count + verifier 
+    if count == num:
+        return True 
+    return False
+
+
+print("Example:")
+print(is_armstrong(11))
+
+# These "asserts" are used for self-checking
+assert is_armstrong(153) == True
+assert is_armstrong(370) == True
+assert is_armstrong(947) == False
+assert is_armstrong(371) == True
+assert is_armstrong(407) == True
+assert is_armstrong(163) == False
+assert is_armstrong(100) == False
+assert is_armstrong(8208) == True
+assert is_armstrong(930) == False
+assert is_armstrong(4) == True
