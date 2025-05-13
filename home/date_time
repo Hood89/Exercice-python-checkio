@@ -1,0 +1,42 @@
+import datetime 
+
+def convert_date(date: str) -> str:
+    date_parts = date.split("/")
+    
+    if len(date_parts) != 3:
+        return "Error: Invalid date."
+    
+    day, month, year = date_parts
+    
+    
+    if len(day) != 2 or not day.isdigit():
+        return "Error: Invalid date."
+    if len(month) != 2 or not month.isdigit():
+        return "Error: Invalid date."
+    if len(year) != 4 or not year.isdigit():
+        return "Error: Invalid date."
+    
+    try:
+        datetime.datetime(int(year), int(month), int(day))
+    except ValueError:
+        return "Error: Invalid date."
+    return f"{year}-{month}-{day}"
+
+
+print("Example:")
+print(convert_date("01/01/2023"))
+
+# These "asserts" are used for self-checking
+assert convert_date("25/12/2021") == "2021-12-25"
+assert convert_date("01/01/2000") == "2000-01-01"
+assert convert_date("15/06/1995") == "1995-06-15"
+assert convert_date("29/02/2020") == "2020-02-29"
+assert convert_date("10/10/2010") == "2010-10-10"
+assert convert_date("31/05/1985") == "1985-05-31"
+assert convert_date("07/08/1960") == "1960-08-07"
+assert convert_date("02/09/1999") == "1999-09-02"
+assert convert_date("30/04/1975") == "1975-04-30"
+#assert convert_date("29/02/2019") == "Error: Invalid date."
+assert convert_date("30/04/1975/1") == "Error: Invalid date."
+
+print("The mission is done! Click 'Check Solution' to earn rewards!")
