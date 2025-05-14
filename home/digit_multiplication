@@ -1,0 +1,22 @@
+def checkio(number: int) -> int:
+    # your code here
+    liste_num = list(str(number))
+    multiple = 1
+    
+    for num in liste_num:
+        if num == "0":
+            continue 
+        multiple = multiple * int(num)
+    return multiple 
+
+
+print("Example:")
+print(checkio(123405))
+
+# These "asserts" are used for self-checking
+assert checkio(123405) == 120
+assert checkio(999) == 729
+assert checkio(1000) == 1
+assert checkio(1111) == 1
+
+print("The mission is done! Click 'Check Solution' to earn rewards!")
