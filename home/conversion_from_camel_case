@@ -1,0 +1,24 @@
+def from_camel_case(name: str) -> str:
+    # replace this for solution
+    words = []
+    current_word = ""
+    
+    for char in name:
+        if char.isupper():
+            if current_word:
+                words.append(current_word)
+                current_word = ""
+        current_word += char     
+    words.append(current_word)
+    
+    return "_".join(word.lower() for word in words)
+
+
+print("Example:")
+print(from_camel_case("MyFunctionName"))
+
+# These "asserts" are used for self-checking
+assert from_camel_case("MyFunctionName") == "my_function_name"
+assert from_camel_case("IPhone") == "i_phone"
+
+print("The mission is done! Click 'Check Solution' to earn rewards!")
