@@ -3,6 +3,22 @@ def middle(text: str) -> str:
     return text[(len(text)-1)//2:(len(text)+2)//2]
 
 
+#ou tu peux faire 
+def middle(text: str) -> str:
+    longueur = len(text)
+
+    if longueur % 2 == 0:
+        # longueur paire : retourner les 2 lettres du milieu
+        milieu_gauche = longueur // 2 - 1
+        milieu_droit = longueur // 2 + 1
+        return text[milieu_gauche:milieu_droit]
+    else:
+        # longueur impaire : retourner la lettre du milieu
+        milieu = longueur // 2
+        return text[milieu]
+""""""""""""""
+
+
 print("Example:")
 print(middle("example"))
 
