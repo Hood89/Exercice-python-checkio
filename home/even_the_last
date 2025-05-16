@@ -1,0 +1,40 @@
+def checkio(array: list[int]) -> int:
+    # your code here
+    stocker = 0
+    evens = []
+    
+    for i in range(0, len(array), 2):
+        if not array:
+            return 0
+        evens.append(array[i])
+        stocker = sum(evens)
+        stocker = stocker * array[-1]
+    return stocker 
+
+
+print("Example:")
+print(checkio([0, 1, 2, 3, 4, 5]))
+
+# These "asserts" are used for self-checking
+assert checkio([0, 1, 2, 3, 4, 5]) == 30
+assert checkio([1, 3, 5]) == 30
+assert checkio([6]) == 36
+assert checkio([]) == 0
+
+print("The mission is done! Click 'Check Solution' to earn rewards!")
+
+""" 
+
+#we can solve it like this too
+def checkio(array: list[int]) -> int:
+    # Si la liste est vide, retourne 0 directement
+    if not array:
+        return 0
+
+    # Somme des éléments aux indices pairs (0, 2, 4, ...)
+    somme = sum(array[i] for i in range(0, len(array), 2))
+
+    # Multiplie la somme par le dernier élément
+    return somme * array[-1]
+
+"""
