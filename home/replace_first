@@ -1,0 +1,34 @@
+from collections.abc import Iterable
+
+
+def replace_first(items: list) -> Iterable:
+    # your code here
+    if len(items) <= 1:
+        return items 
+    return items[1:] + [items[0]]
+
+
+# These "asserts" are used for self-checking
+print("Example:")
+print(list(replace_first([1, 2, 3, 4])))
+
+assert replace_first([1, 2, 3, 4]) == [2, 3, 4, 1]
+assert replace_first([1]) == [1]
+assert replace_first([]) == []
+
+print("The mission is done! Click 'Check Solution' to earn rewards!")
+
+#or you can solve it like this 
+
+la = [2]
+lb = []
+
+# Si la liste contient 0 ou 1 élément, on la retourne telle quelle
+if len(la) <= 1:
+    lb = la
+else:
+    for i in range(1, len(la)):
+        lb.append(la[i])
+    lb.append(la[0])
+
+print(lb)
