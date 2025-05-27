@@ -1,0 +1,5 @@
+my_list = ['bi', 'a', 'b', 'a', 'bi', 'c', 'b', 'b', 'bi', 'bi']
+count_list = Counter(my_list)
+
+
+print(most_common[0][0])  #
