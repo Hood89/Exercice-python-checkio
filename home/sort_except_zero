@@ -1,0 +1,35 @@
+ss = [8, 3, 10, 0, 0, 9, 5, 4, 0]
+
+liste_indice = []
+liste_stable = []
+
+for s , value in enumerate(ss):
+  if value == 0:
+    liste_indice.append(s)
+  if value != 0:
+    liste_stable.append(value)
+    
+    
+liste_stable.sort()
+
+compteur = 0
+nouvelle_liste = []
+
+for i in range(len(ss)):
+  if i in liste_indice:
+    nouvelle_liste.append(0)
+  else:
+    nouvelle_liste.append(liste_stable[compteur])
+    compteur += 1
+  
+  
+
+print(f"The original list is {ss}")
+print()
+print(f"The zero's indice are: {liste_indice}")
+print()
+print(f"The sort list is: {liste_stable}")
+print()
+print(f"The sorted list with 0 is: {nouvelle_liste}")
+
+#Ce programme doit sort une liste mais laisse les 0 dans leur positions original
