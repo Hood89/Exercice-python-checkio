@@ -1,0 +1,50 @@
+def non_empty_lines(text: str) -> int:
+    # your code here
+    lines = text.split("\n")
+    count = 0
+    for ss in lines:
+        if ss.strip() != "":
+            count = count + 1
+    return count 
+
+
+print("Example:")
+print(non_empty_lines("one simple line\n"))
+
+# These "asserts" are used for self-checking
+assert non_empty_lines("one simple line\n") == 1
+assert non_empty_lines("") == 0
+assert non_empty_lines("\nonly one line\n            ") == 1
+assert (
+    non_empty_lines(
+        "\nLorem ipsum dolor sit amet,\n\nconsectetur adipiscing elit\nNam odio nisi, aliquam\n            "
+    )
+    == 3
+)
+
+print("The mission is done! Click 'Check Solution' to earn rewards!")
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
