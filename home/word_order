@@ -1,0 +1,40 @@
+import string 
+
+def words_order(text: str, words: list) -> bool:
+    # Nettoyage du texte
+    translator = str.maketrans('', '', string.punctuation)
+    clean_text = text.translate(translator)
+    
+    res = clean_text.split()
+    index_abc = 0
+    
+    for ss in res:
+        if index_abc < len(set(words)) and ss == words[index_abc]:
+            index_abc += 1
+        if index_abc == len(words): 
+            return True 
+
+    return False  
+
+# Test du code
+print("Example:")
+print(words_order("hi world im here", ["world", "here"]))
+
+# Assertions de validation
+assert words_order("hi world im here", ["world", "here"]) == True
+assert words_order("hi world im here", ["here", "world"]) == False
+assert words_order("hi world im here", ["world"]) == True
+assert words_order("hi world im here", ["world", "here", "hi"]) == False
+assert words_order("hi world im here", ["world", "im", "here"]) == True
+assert words_order("hi world im here", ["world", "hi", "here"]) == False
+assert words_order("hi world im here", ["world", "world"]) == False
+assert words_order("hi world im here", ["country", "world"]) == False
+assert words_order("hi world im here", ["wo", "rld"]) == False
+assert words_order("", ["world", "here"]) == False
+assert words_order("hi world world im here", ["world", "world"]) == False
+assert (
+    words_order("hi world world im here hi world world im here", ["world", "here"])
+    == True
+)
+
+print("The mission is done! Click 'Check Solution' to earn rewards!")
