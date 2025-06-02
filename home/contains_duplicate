@@ -1,0 +1,13 @@
+nums = [2, 4, 6, 8, 10, 9, 2, 4, 6]
+nums.sort()
+
+for i in range(len(nums) - 1):
+  if nums[i] == nums[i + 1]:
+    print(True)
+    break
+  else:
+    print(False)
+  
+ 
+
+#programme to check if a list have duplicate value 
